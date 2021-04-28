@@ -18,7 +18,7 @@ def chrome_driver():
     chrome_options.add_argument("--no-sandbox")
 
     # uncomment for deployment
-    # chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
     
     
     driver = webdriver.Chrome(executable_path=get_chrome_driver_path(), chrome_options=chrome_options)

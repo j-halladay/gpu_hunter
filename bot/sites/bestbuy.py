@@ -8,11 +8,11 @@ from bs4 import BeautifulSoup
 #     file.close()
 #     return
 
-def check_availibility():
+def check_availibility(url):
     driver = chrome.chrome_driver()
     availible = False
-    print('into bestbuy.com gigabyte')
-    url = "https://www.bestbuy.com/site/gigabyte-nvidia-geforce-rtx-3070-eagle-8gb-gddr6-pci-express-4-0-graphics-card/6437912.p?acampID=0&cmp=RMX&loc=Hatch&ref=198&skuId=6437912"
+    print(f'Accessing {url}')
+    
     
     driver.get(url)
 
@@ -32,7 +32,8 @@ def check_availibility():
 
     except:
         print('no element found')
-
+        chrome.close(driver)
+        return "Error"
     
    
     chrome.close(driver)
