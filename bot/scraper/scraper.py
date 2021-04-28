@@ -15,7 +15,7 @@ def scraper():
 
     message = "GPU(s) availible: "
 
-    for url in test_urls:
+    for url in bb_urls:
         is_availible = bb.check_availibility(url)
         if is_availible == "Error":
             return {'message': f"Error: Cannot find Any Button in {url}", 'error': True}
