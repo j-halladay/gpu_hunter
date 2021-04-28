@@ -1,5 +1,6 @@
 import bot.scraper.scraper as scraper
 import bot.sites.bestbuy_test as bbtest
+import time
 __author__ = "j_halladay"
 
 if __name__ == '__main__':
@@ -23,4 +24,4 @@ if __name__ == '__main__':
             # uncomment scraper.send_sms() for production
 
            
-        sleep(1200)
+        time.sleep(1200)
