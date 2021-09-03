@@ -12,6 +12,7 @@ sendsms = "*"
 selenium = "*"
 chromedriver-install = "*"
 twilio = "*"
+apscheduler = "*"
 
 [requires]
 python_version = "3.8"
