@@ -7,7 +7,7 @@ if __name__ == '__main__':
     print('Starting...')
     x = 2
     error_message_sent = False
-    while x != 1:
+    # while x != 1:
 
 
         scraped_data = scraper.scraper()
