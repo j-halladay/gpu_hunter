@@ -24,4 +24,4 @@ if __name__ == '__main__':
             # uncomment scraper.send_sms() for production
 
            
-        time.sleep(1200)
+        # time.sleep(1200)
