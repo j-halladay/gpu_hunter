@@ -1,6 +1,6 @@
-from bot.scraper import chromeHelper as chrome
+from bot.helpers import chromeHelper as chrome
 from bs4 import BeautifulSoup
-
+import bot.sites.links as link
 
 # def html_write(source):
 #     file = open("testfile.html","w") 
@@ -8,14 +8,11 @@ from bs4 import BeautifulSoup
 #     file.close()
 #     return
 
-def check_availibility():
+def check_availibility(url):
     driver = chrome.chrome_driver()
     availible = False
-
+    print(f'Accessing {url}')
     
-
-    print('into bestbuy.com gigabyte')
-    url = "https://www.bestbuy.com/site/sony-85-classx900h-series-led-4k-uhd-smart-android-tv/6401211.p?skuId=6401211"
     
     driver.get(url)
 
@@ -34,9 +31,9 @@ def check_availibility():
 
 
     except:
-        print('no element found')
+        print('No correct element found')
         chrome.close(driver)
-        return False
+        return ""
     
    
     chrome.close(driver)
@@ -48,3 +45,27 @@ def check_availibility():
         return url
     else:
         return ""
+
+def scraper():
+
+    
+    availible = []
+
+    message = "Best Buy GPU(s) availible: "
+    bestbuy_links = link.linkTester()
+    for url in bestbuy_links:
+        is_availible = check_availibility(url)
+
+        if is_availible != "":
+            availible.append(str(is_availible))
+            #enable in production 
+            # send_sms(f"Immediate Action, buy GPU now {str(url)}")
+
+    if len(availible) != 0:
+        for url in availible:
+            print(f'{availible} {url}')
+            message = message + f"{url} \n"
+        return {'message': message, 'error': False}
+
+    else:
+        return False

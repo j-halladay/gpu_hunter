@@ -8,11 +8,12 @@ def bestbuyLinks():
 
     return bb_urls
 
-def errorLink():
-    error_urls = ["https://www.google.com",]
-    return error_urls
 
-def testLink():
 
-    test_urls = ["https://www.bestbuy.com/site/sony-85-classx900h-series-led-4k-uhd-smart-android-tv/6401211.p?skuId=6401211",]
+
+def linkTester():
+
+    test_urls = ["https://www.bestbuy.com/site/sony-85-classx900h-series-led-4k-uhd-smart-android-tv/6401211.p?skuId=6401211",
+    "https://www.bestbuy.com/site/apple-ipod-touch-32gb-mp3-player-7th-generation-latest-model-pink/4900946.p?skuId=4900946",
+    "https://www.google.com",]
     return test_urls

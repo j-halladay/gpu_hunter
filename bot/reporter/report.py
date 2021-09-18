@@ -19,14 +19,14 @@ def fullReport():
 
             print(str(result['message']))
             if result['error'] != True:
-                report = report + f"{str(scraped_data["message"])} \n"
+                report = report + f"{str(result['message'])} \n"
                 
         else:
             print('Nothing found!')
             
     if report != "":
         twilio.send_sms(report)
-        # uncomment twilio.send_sms() for production
+        
 
 
 
