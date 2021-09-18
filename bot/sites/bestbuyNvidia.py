@@ -1,4 +1,4 @@
-from bot.scraper import chromeHelper as chrome
+from bot.helpers import chromeHelper as chrome
 from bs4 import BeautifulSoup
 
 

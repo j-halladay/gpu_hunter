@@ -1,6 +1,6 @@
 from bot.scraper import chromeHelper as chrome
 from bs4 import BeautifulSoup
-
+import bot.sites.links as link
 
 # def html_write(source):
 #     file = open("testfile.html","w") 
@@ -46,4 +46,28 @@ def check_availibility(url):
     else:
         return ""
 
+def scraper():
+
+    
+    availible = []
+
+    message = "Best Buy GPU(s) availible: "
+
+    for url in link.bestbuyLinks:
+        is_availible = check_availibility(url)
+        if is_availible == "Error":
+            return {'message': f"Error: Cannot find Any Button in {url}", 'error': True}
+        if is_availible != "":
+            availible.append(str(is_availible))
+            #enable in production 
+            # send_sms(f"Immediate Action, buy GPU now {str(url)}")
+
+    if len(availible) != 0:
+        for url in availible:
+            print(f'{availible} {url}')
+            message = message + f"{url} \n"
+        return {'message': message, 'error': False}
+
+    else:
+        return False
  
