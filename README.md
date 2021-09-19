@@ -4,7 +4,7 @@
 GPU Hunter is a example project for scraping data and messaging via SMS.
 
 ## Description
-GPU-hunter scrapes links from bestbuy.com to check specific graphics cards (GPU's) to see if they are sold out. If it finds one of the links is in stock, it will text a phone number using Twillo's API.
+GPU-hunter scrapes links from bestbuy.com to check specific graphics cards (GPU's) to see if they are sold out. If it finds one of the links is in stock, it will text a phone number using Twilio's API.
 
 
 ## Planed Development
